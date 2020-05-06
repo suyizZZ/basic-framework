@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+basicFarmwork
 
 ## Available Scripts
 
@@ -6,17 +6,20 @@ In the project directory, you can run:
 
 ### `yarn start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+运行项目
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### `yarn compile`
+
+打包全局模板 `Utils` 等
 
 ### `yarn build`
 
 打包项目文件
 
-
 ### `yarn prod`
 
-打包项目文件  同时打包 全局模块 `Utils` 等
+打包项目文件  同时打包 全局模块 `Utils` 等  
+
+`yarn global add serve`
+
+`serve -s build`
