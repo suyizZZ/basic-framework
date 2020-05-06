@@ -78,7 +78,8 @@ module.exports = function (config) {
             path: config.path,
             filename: config.output,
             library,
-            publicPath: publicPath,
+            publicPath: '',
+            // publicPath: publicPath,
             libraryExport: 'default',
             libraryTarget: libraryTarget, // 通用模块定义
             umdNamedDefine: true,
