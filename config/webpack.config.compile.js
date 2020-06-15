@@ -20,7 +20,6 @@ if (env.stringified['process.env'].NODE_ENV !== '"production"') {
     throw new Error('Production builds must have NODE_ENV=production.');
 }
 const cssRegex = /\.css$/;
-const sassRegex = /\.(scss|sass)$/;
 const lessRegex = /\.less$/;
 
 const getStyleLoaders = (cssOptions, preProcessor, otherOptions) => {
@@ -192,17 +191,17 @@ module.exports = function (config) {
                             }),
                             sideEffects: true,
                         },
-                        {
-                            test: sassRegex,
-                            use: getStyleLoaders(
-                                {
-                                    importLoaders: 2,
-                                    sourceMap: shouldUseSourceMap,
-                                },
-                                'sass-loader',
-                            ),
-                            sideEffects: true,
-                        },
+                        // {
+                        //     test: sassRegex,
+                        //     use: getStyleLoaders(
+                        //         {
+                        //             importLoaders: 2,
+                        //             sourceMap: shouldUseSourceMap,
+                        //         },
+                        //         'sass-loader',
+                        //     ),
+                        //     sideEffects: true,
+                        // },
                         {
                             test: lessRegex,
                             use: getStyleLoaders(
