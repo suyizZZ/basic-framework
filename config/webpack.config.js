@@ -37,6 +37,12 @@ const shouldInlineRuntimeChunk = process.env.INLINE_RUNTIME_CHUNK !== 'false';
 
 const isExtendingEslintConfig = process.env.EXTEND_ESLINT === 'true';
 
+const publicPath = paths.servedPath;
+
+const shouldUseRelativeAssetPaths = publicPath === "./";
+
+const publicUrl = publicPath.slice(0, -1);
+
 const imageInlineSizeLimit = parseInt(
   process.env.IMAGE_INLINE_SIZE_LIMIT || '10000'
 );
@@ -179,7 +185,8 @@ module.exports = function(webpackEnv) {
       // It requires a trailing slash, or the file assets will get an incorrect path.
       // We inferred the "public path" (such as / or /my-project) from homepage.
       // publicPath: paths.publicUrlOrPath,
-      publicPath: '',
+      // publicPath: '',
+      publicPath: isEnvDevelopment ? '' : publicPath,
       // Point sourcemap entries to original disk location (format as URL on Windows)
       devtoolModuleFilenameTemplate: isEnvProduction
         ? info =>
@@ -524,6 +531,10 @@ module.exports = function(webpackEnv) {
         },
       ],
     },
+
+    // 设置哪些模块不通过webpack打包  而是直接在index。html 引入
+    externals: require(paths.appPackageJson).externals,
+
     plugins: [
       // Generates an `index.html` file with the <script> injected.
       new HtmlWebpackPlugin(

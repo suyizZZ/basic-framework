@@ -59,6 +59,10 @@
     "eslintConfig": {
         "extends": "react-app"
     },
+    "externals": {
+        "react": "React",
+        "react-dom": "ReactDOM"
+      },
     "browserslist": {
         "production": [
             ">0.2%",

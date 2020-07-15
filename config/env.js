@@ -14,7 +14,7 @@ let globalImportScript = "";
 
 Object.keys(moduleConfig).map(key => {
   if (!moduleConfig[key].output) {
-    moduleConfig[key].output = `${filePath}/js/${key}/${key}.js`
+    moduleConfig[key].output = `/${filePath}/js/${key}/${key}.js`
   }
 })
 
