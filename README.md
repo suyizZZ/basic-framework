@@ -1,8 +1,6 @@
-basicFarmwork
+basicFarmwork(基于cratet-react-app框架改造)
 
-## Available Scripts
-
-In the project directory, you can run:
+提取第三方包 减小打包体积 定义全局对象 方便应用 
 
 ### `yarn start`
 
