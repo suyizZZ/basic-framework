@@ -180,6 +180,7 @@ module.exports = {
     extensions: paths.moduleFileExtensions
       .map(ext => `.${ext}`)
       .filter(ext => useTypeScript || !ext.includes('ts')),
+    // 设置路径别名
     alias: require("./alias"),
     plugins: [
       // Adds support for installing with Plug'n'Play, leading to faster installs and adding

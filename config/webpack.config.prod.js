@@ -280,13 +280,16 @@ module.exports = {
         enforce: 'pre',
         use: [
           {
+            loader: require.resolve('thread-loader'),
+          },
+          {
+            loader: require.resolve('eslint-loader'),
             options: {
               cache: true,
               formatter: require.resolve('react-dev-utils/eslintFormatter'),
               eslintPath: require.resolve('eslint'),
 
             },
-            loader: require.resolve('eslint-loader'),
           },
         ],
         include: paths.appSrc,

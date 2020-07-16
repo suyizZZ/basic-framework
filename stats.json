@@ -1,0 +1,22 @@
+Creating an optimized production build...
+Compiled successfully.
+
+File sizes after gzip:
+
+  1.17 KB  build\static\js\main.679abd9e.chunk.js
+  770 B    build\static\js\runtime-main.3d948662.js
+  538 B    build\static\css\main.523f09c5.chunk.css
+
+The project was built assuming it is hosted at /.
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+You may serve it with a static server:
+
+  yarn global add serve
+  serve -s build
+
+Find out more about deployment here:
+
+  bit.ly/CRA-deploy
+
